@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <script src="jscript/logicajs"></script>
     <title>Hola Roshi 3D</title>
 </head>
 <body>
@@ -21,6 +21,33 @@
             </ul>
 
         </nav>
+    </div>
+
+    <div class="formulario">
+        <form name="campos" id="campos" class="form">
+            <label for="nombre" class="form-label">Nombre: </label>
+                <input type="text" name="name" class="form-input" placeholder="Ingrese su nombre aqui" id="nombre" required>
+
+            <label for="apellido" class="form-label">Apellido: </label>
+                <input type="text" name="surname" class="form-input" placeholder="Ingrese su apellido aqui" id="apellido" required>
+
+            <label for="telefono" class="form-label">Telefono: </label>
+                <input type="tel" name="tel" class="form-input" placeholder="Ingrese su telefono aqui" id="telefono" required>
+
+            <label for="email" class="form-label">Email: </label>
+                <input type="email" name="correo" class="form-input" placeholder="Ingrese su correo electronico aqui" id="email" required>
+
+            <label for="areaTexto" class="form-label">Comentarios: </label>
+                <textarea name="areaTexto" class="form-textarea" placeholder="Escriba su comentario o inquietud aqui" id="areaTexto"></textarea> 
+
+            <input type="submit" class="button-submit" name="enviar" value="Enviar" onclick="">
+
+            <input type="button" class="button-limpiar" value="Limpiar" onclick="reseteando()">
+
+
+            <p>Gracias por escribirnos, nos comunicaremos a la brevedad.</p>
+        </form>
+
     </div>
     <footer>
         <div>
