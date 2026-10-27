@@ -254,3 +254,23 @@ footer {
     color: var(--texto-apagado);
     text-align: center;
 }
+
+/*  Estilos del Carrusel  */
+.contenedorCarrusel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.contenedorBotones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+    gap: 20px;
+}
