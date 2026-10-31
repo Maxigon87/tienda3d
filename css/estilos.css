@@ -1,276 +1,272 @@
-/* ==============================
-   VARIABLES Y ESTILOS GENERALES
-   ============================== */
-/* Variables de color de la paleta (tema oscuro y acentos del logo) */
-:root {
-    --bg-oscuro: #0e1511;
-    --bg-header: rgba(18, 27, 22, 0.85);
-    --naranja-roshi: #ff6a00;
-    --verde-roshi: #39e75f;
-    --texto-claro: #f1f5f2;
-    --texto-apagado: #8ca394;
-    --borde-suave: rgba(255, 106, 0, 0.25);
-}
-
-/* Reseteo general de márgenes y cálculo de medidas */
+/* ==========================================
+   ESTILOS GENERALES Y RESET
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fondo principal, color de texto por defecto y fuente */
 body {
-    background-color: var(--bg-oscuro);
-    color: var(--texto-claro);
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    background-color: #0e1511;
+    color: #f1f5f2;
+    font-family: Arial, sans-serif;
 }
 
-/* Contenedor principal que ocupa toda la pantalla en vertical */
+/* Contenedor que ocupa toda la pantalla y empuja el pie de pagina abajo */
 .pagina-entera {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 0 15px;
 }
 
-/* ==============================
-   HEADER & NAVBAR
-   ============================== */
-/* Barra de navegación superior: contenedor flotante y centrado */
-.header-container {
+/* ==========================================
+   CABECERA Y MENU DE NAVEGACION
+   ========================================== */
+.cabecera-contenedor {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 15px 25px;
+    background-color: #121b16;
+    border: 1px solid #ff6a00;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    margin: 15px auto;
-    background-color: var(--bg-header);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--borde-suave);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Contenedor del logo a la izquierda */
-.logo-caja {
-    display: flex;
-    align-items: center;
-}
-
-/* Imagen del logo con forma de avatar circular y brillo naranja */
-.logo-imagen {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    border: 2px solid var(--naranja-roshi);
-    box-shadow: 0 0 12px rgba(255, 106, 0, 0.45);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto al pasar el cursor sobre el logo: agranda y cambia a brillo verde */
-.logo-imagen:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 18px rgba(57, 231, 95, 0.6);
-    border-color: var(--verde-roshi);
-}
-
-/* Contenedor derecho del menú de enlaces */
-.naveg-caja {
-    display: flex;
-    align-items: center;
-}
-
-/* Lista de botones del menú (en fila y con separación) */
-.nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
-    list-style: none;
-}
-
-/* Estilo del texto de cada enlace del menú */
-.nav li a {
-    text-decoration: none;
-    color: var(--texto-claro);
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.05em;
-    position: relative;
-    padding: 6px 2px;
-    transition: color 0.3s ease;
-}
-
-/* Línea animada oculta debajo de los enlaces */
-.nav li a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--naranja-roshi);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-}
-
-/* Cambio de color del enlace al pasar el cursor */
-.nav li a:hover {
-    color: var(--naranja-roshi);
-}
-
-/* Expande la línea inferior al pasar el cursor */
-.nav li a:hover::after {
-    width: 100%;
-}
-
-/* ==============================
-   FOOTER
-   ============================== */
-/* Pie de página fijado abajo con línea divisoria superior */
-footer {
-    width: 100%;
-    margin-top: auto;
-    padding: 24px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Texto de copyright centrado y atenuado */
-.footer-contenido {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: var(--texto-apagado);
-    font-size: 0.85rem;
-}
-
-/* ==============================
-   FORMULARIO (INFO / CONTACTO)
-   ============================== */
-/* Tarjeta contenedora del formulario con bordes redondeados */
-.formulario {
-    width: 100%;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: var(--bg-header);
-    border: 1px solid var(--borde-suave);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-}
-
-/* Disposición vertical de los elementos del formulario */
-.form {
-    display: flex;
-    flex-direction: column;
     gap: 15px;
 }
 
-/* Etiquetas de los campos en color verde */
-.form-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--verde-roshi);
+.marca-titulo {
+    font-size: 24px;
+    color: #ff6a00;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
 
-/* Cajas de texto (inputs y textarea) */
-.form-input,
-.form-textarea {
+/* Logo redondo */
+.logo-imagen {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ff6a00;
+    display: block;
+    object-fit: cover;
+}
+
+.logo-imagen:hover {
+    border-color: #39e75f;
+}
+
+/* Botones del menu de navegacion */
+.navegacion-lista {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+.navegacion-lista li a {
+    text-decoration: none;
+    color: #f1f5f2;
+    font-weight: bold;
+}
+
+.navegacion-lista li a:hover {
+    color: #ff6a00;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   FORMULARIO DE CONTACTO (INFO)
+   ========================================== */
+.formulario {
     width: 100%;
+    max-width: 1100px;
+    margin: 25px auto 40px auto;
+    padding: 25px;
+    background-color: #121b16;
+    border: 1px solid #ff6a00;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.campo-etiqueta {
+    display: block;
+    color: #39e75f;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Cajas donde escribe el usuario con limites claros */
+.campo-entrada, .campo-area-texto {
+    width: 100%;
+    margin-bottom: 18px;
     padding: 10px 14px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
-    color: var(--texto-claro);
+    background-color: #fdfdfd;
+    color: #111;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     font-family: inherit;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 15px;
 }
 
-/* Resalte de campos con borde naranja al hacer clic/escribir */
-.form-input:focus,
-.form-textarea:focus {
-    border-color: var(--naranja-roshi);
-    box-shadow: 0 0 8px rgba(255, 106, 0, 0.3);
+.campo-entrada:focus, .campo-area-texto:focus {
+    outline: 2px solid #ff6a00;
 }
 
-/* Área de comentarios con redimensionado únicamente vertical */
-.form-textarea {
-    min-height: 100px;
+.campo-area-texto {
+    height: 110px;
     resize: vertical;
 }
 
-/* Contenedor horizontal para los botones del formulario */
-.form-botones {
+.botones-formulario {
     display: flex;
     gap: 12px;
-    margin-top: 10px;
 }
 
-/* Estilos base compartidos para ambos botones */
-.button-submit,
-.button-limpiar {
+.boton-enviar, .boton-limpiar {
     flex: 1;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    cursor: pointer;
+    padding: 11px 20px;
     border: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
 }
 
-/* Botón de envío (color naranja con texto blanco) */
-.button-submit {
-    background-color: var(--naranja-roshi);
-    color: #fff;
+.boton-enviar {
+    background-color: #ff6a00;
+    color: white;
 }
 
-/* Botón de limpiar (fondo neutro con borde sutil) */
-.button-limpiar {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--texto-claro);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.boton-limpiar {
+    background-color: #333;
+    color: white;
 }
 
-/* Efecto al pasar el cursor sobre los botones: ligera elevación */
-.button-submit:hover,
-.button-limpiar:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-/* Mensaje de agradecimiento al pie del formulario */
-.form-mensaje {
+.mensaje-formulario {
     margin-top: 15px;
-    font-size: 0.85rem;
-    color: var(--texto-apagado);
+    font-size: 13px;
+    color: #8ca394;
     text-align: center;
 }
 
-/*  Estilos del Carrusel  */
-.contenedorCarrusel {
+/* ==========================================
+   CARRUSEL DE IMAGENES (GALERIA)
+   ========================================== */
+.contenedor-carrusel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto 40px auto;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
-    padding: 15px;
-    max-width: 500px;
-    margin: 40px auto;
+    align-items: center;
+    flex: 1;
 }
 
-.contenedorBotones{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#imgCarrusel {
+    max-width: 100%;
+    height: 65vh;
+    max-height: 650px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.contenedor-botones {
     margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.contenedor-botones button {
+    padding: 10px 24px;
+    background-color: #ff6a00;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ==========================================
+   PANTALLA DE INICIO (INDEX)
+   ========================================== */
+.inicio-contenedor {
     width: 100%;
-    gap: 20px;
+    max-width: 1100px;
+    margin: 20px auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.inicio-video {
+    width: 100%;
+    max-width: 1100px;
+    border: 3px solid #ff6a00;
+    border-radius: 12px;
+}
+
+.inicio-texto {
+    width: 100%;
+    max-width: 1100px;
+    background-color: #121b16;
+    padding: 20px 25px;
+    margin: 20px auto;
+    border: 1px solid #ff6a00;
+    border-radius: 10px;
+    color: #f1f5f2;
+}
+
+.inicio-texto h3 {
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   PIE DE PAGINA (FOOTER)
+   ========================================== */
+footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    color: #8ca394;
+    border-top: 1px solid rgba(255, 106, 0, 0.2);
+}
+
+.pie-contenido {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ==========================================
+   ADAPTACION MOVIL (RESPONSIVE)
+   ========================================== */
+@media (max-width: 650px) {
+    .cabecera-contenedor {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .marca-titulo {
+        font-size: 20px;
+    }
+
+    .botones-formulario {
+        flex-direction: column;
+    }
+
+    #imgCarrusel {
+        height: 50vh;
+    }
 }

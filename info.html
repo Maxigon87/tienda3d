@@ -9,16 +9,18 @@
 </head>
 <body>
     <div class="pagina-entera">
-        <header class="header-container">
+        <header class="cabecera-contenedor">
             <div class="logo-caja">
                 <a href="index.html">
                     <img src="assets/imagenesSitio/logo/logo-roshi.jpg" alt="Latienda3d" title="Latienda3d" class="logo-imagen">
                 </a>
             </div>
             
+            <div class="marca-titulo">Hola Roshi 3D</div>
+
             <div class="naveg-caja">
                 <nav id="naveg" aria-label="Navegación principal">
-                    <ul class="nav">
+                    <ul class="navegacion-lista">
                         <li><a href="index.html">INICIO</a></li>
                         <li><a href="galeria.html">GALERIA</a></li>
                         <li><a href="info.html">INFO</a></li>
@@ -27,33 +29,37 @@
             </div>
         </header>
 
+        <div class="inicio-texto" style="margin-top: 15px;">
+            <h3>¿Tenés alguna consulta sobre nuestros productos, precios o un proyecto personalizado? ¡Escribinos a través del siguiente formulario!</h3>
+        </div>
+
         <div class="formulario">
-            <form name="campos" id="campos" class="form">
-                <label for="nombre" class="form-label">Nombre: </label>
-                <input type="text" name="name" class="form-input" placeholder="Ingrese su nombre aqui" id="nombre" required>
+            <form name="campos" id="campos" class="formulario-cuerpo">
+                <label for="nombre" class="campo-etiqueta">Nombre: </label>
+                <input type="text" name="name" class="campo-entrada" placeholder="Ingrese su nombre aqui" id="nombre" required>
 
-                <label for="apellido" class="form-label">Apellido: </label>
-                <input type="text" name="surname" class="form-input" placeholder="Ingrese su apellido aqui" id="apellido" required>
+                <label for="apellido" class="campo-etiqueta">Apellido: </label>
+                <input type="text" name="surname" class="campo-entrada" placeholder="Ingrese su apellido aqui" id="apellido" required>
 
-                <label for="telefono" class="form-label">Telefono: </label>
-                <input type="tel" name="tel" class="form-input" placeholder="Ingrese su telefono aqui" id="telefono" required>
+                <label for="telefono" class="campo-etiqueta">Telefono: </label>
+                <input type="tel" name="tel" class="campo-entrada" placeholder="Ingrese su telefono aqui" id="telefono" required>
 
-                <label for="email" class="form-label">Email: </label>
-                <input type="email" name="correo" class="form-input" placeholder="Ingrese su correo electronico aqui" id="email" required>
+                <label for="email" class="campo-etiqueta">Email: </label>
+                <input type="email" name="correo" class="campo-entrada" placeholder="Ingrese su correo electronico aqui" id="email" required>
 
-                <label for="areaTexto" class="form-label">Comentarios: </label>
-                <textarea name="areaTexto" class="form-textarea" placeholder="Escriba su comentario o inquietud aqui" id="areaTexto"></textarea> 
+                <label for="areaTexto" class="campo-etiqueta">Comentarios: </label>
+                <textarea name="areaTexto" class="campo-area-texto" placeholder="Escriba su comentario o inquietud aqui" id="areaTexto"></textarea> 
 
-                <div class="form-botones">
-                    <input type="submit" class="button-submit" name="enviar" value="Enviar">
-                    <input type="button" class="button-limpiar" value="Limpiar" onclick="reseteando()">
+                <div class="botones-formulario">
+                    <input type="submit" class="boton-enviar" name="enviar" value="Enviar">
+                    <input type="button" class="boton-limpiar" value="Limpiar" onclick="reseteando()">
                 </div>
 
-                <p class="form-mensaje">Gracias por escribirnos, nos comunicaremos a la brevedad.</p>
+                <p class="mensaje-formulario">Gracias por escribirnos, nos comunicaremos a la brevedad.</p>
             </form>
         </div>
         <footer>
-            <div class="footer-contenido">
+            <div class="pie-contenido">
                 <div>© 2026 Roshi3D inc. Todos los derechos reservados.</div>
             </div>
         </footer>
