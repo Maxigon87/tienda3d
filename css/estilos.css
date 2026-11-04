@@ -13,7 +13,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Contenedor que ocupa toda la pantalla y empuja el pie de pagina abajo */
 .pagina-entera {
     width: 100%;
     min-height: 100vh;
@@ -29,8 +28,7 @@ body {
    ========================================== */
 .cabecera-contenedor {
     width: 100%;
-    max-width: 1100px;
-    margin: 20px auto;
+    margin: 0 0 20px 0;
     padding: 15px 25px;
     background-color: #121b16;
     border: 1px solid #ff6a00;
@@ -42,13 +40,15 @@ body {
 }
 
 .marca-titulo {
+    width: 50%;
     font-size: 24px;
     color: #ff6a00;
     font-weight: bold;
     letter-spacing: 0.05em;
+    text-align: center;
 }
 
-/* Logo redondo */
+
 .logo-imagen {
     width: 50px;
     height: 50px;
@@ -62,7 +62,6 @@ body {
     border-color: #39e75f;
 }
 
-/* Botones del menu de navegacion */
 .navegacion-lista {
     display: flex;
     gap: 20px;
@@ -102,7 +101,7 @@ body {
     margin-bottom: 6px;
 }
 
-/* Cajas donde escribe el usuario con limites claros */
+
 .campo-entrada, .campo-area-texto {
     width: 100%;
     margin-bottom: 18px;
@@ -171,8 +170,8 @@ body {
     flex: 1;
 }
 
-/* Columna izquierda: texto h3 */
-.galeria-texto {
+
+/* antigua galeria-texto */ .old-galeria-texto {
     flex: 1;
     background-color: #121b16;
     padding: 30px 25px;
@@ -190,7 +189,6 @@ body {
     text-align: center;
 }
 
-/* Columna derecha: carrusel (más ancho que el texto) */
 .contenedor-carrusel {
     flex: 2;
     display: flex;
@@ -229,6 +227,15 @@ body {
 /* ==========================================
    PANTALLA DE INICIO (INDEX)
    ========================================== */
+.inicio-columna-izquierda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
 .inicio-contenedor {
     width: 100%;
     max-width: 1100px;
@@ -242,6 +249,8 @@ body {
 .inicio-video {
     width: 100%;
     max-width: 1100px;
+    height: 350px;
+    object-fit: cover;
     border: 3px solid #ff6a00;
     border-radius: 12px;
 }
@@ -284,6 +293,9 @@ footer {
    ADAPTACION MOVIL (RESPONSIVE)
    ========================================== */
 @media (max-width: 768px) {
+    .inicio-dos-columnas {
+        flex-direction: column;
+    }
     .cabecera-contenedor {
         flex-direction: column;
         text-align: center;
@@ -299,7 +311,7 @@ footer {
         gap: 20px;
     }
 
-    .galeria-texto, .contenedor-carrusel {
+    .galeria-texto, .contenedor-carrusel, .inicio-columna-izquierda {
         width: 100%;
     }
 
@@ -310,4 +322,188 @@ footer {
     #imgCarrusel {
         height: 45vh;
     }
+}
+
+.galeria-texto {
+    flex: 1;
+    background-color: #121b16;
+    padding: 25px;
+    border: 1px solid #ff6a00;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.lista-beneficios {
+    list-style-type: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.galeria-imagen-impresora {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    border: 2px solid #ff6a00;
+    display: block;
+}
+
+.titulo-productos {
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto 15px auto;
+    text-align: center;
+}
+
+.titulo-productos h2 {
+    color: #ff6a00;
+    font-size: 1.8rem;
+}
+
+.grilla-productos {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.producto-foto {
+    width: calc(33.333% - 14px);
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ff6a00;
+}
+@media (max-width: 768px) {
+    .producto-foto {
+        width: 100%;
+        height: 280px;
+    }
+}
+
+.inicio-dos-columnas {
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+    min-height: calc(100vh - 170px);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 10px 0 20px 0;
+}
+
+.inicio-dos-columnas .inicio-columna-izquierda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inicio-dos-columnas .inicio-video {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border: 3px solid #ff6a00;
+    border-radius: 12px;
+}
+
+.inicio-dos-columnas .inicio-texto {
+    flex: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 30px 25px;
+    gap: 15px;
+}
+
+.inicio-dos-columnas .inicio-texto h2 {
+    color: #ff6a00;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.inicio-dos-columnas .inicio-texto h3 {
+    color: #39e75f;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.inicio-dos-columnas .inicio-texto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f1f5f2;
+}
+
+.inicio-dos-columnas .inicio-texto strong {
+    color: #ff6a00;
+}
+
+.inicio-dos-columnas .contenedor-carrusel {
+    flex: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inicio-dos-columnas #imgCarrusel {
+    width: 100%;
+    flex: 1;
+    min-height: 400px;
+    max-height: calc(100vh - 240px);
+    object-fit: contain;
+}
+
+.datos-resumen {
+    width: 100%;
+    max-width: 1100px;
+    background-color: #121b16;
+    padding: 20px 25px;
+    margin: 20px auto 40px auto;
+    border: 1px solid #ff6a00;
+    border-radius: 10px;
+    color: #f1f5f2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.datos-resumen h3 {
+    color: #ff6a00;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.datos-resumen p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.principal-inicio {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.contenedor-video {
+    width: 100%;
+    max-width: 1100px;
+    margin: 10px auto 25px auto;
 }

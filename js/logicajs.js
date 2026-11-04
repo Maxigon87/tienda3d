@@ -1,8 +1,10 @@
-function reseteando(){
+function reseteando() {
     document.getElementById("campos").reset();
+    var resumen = document.getElementById("resumenDelFormulario");
+    if (resumen) resumen.innerHTML = "";
 }
 
-function validarFormulario(event){ 
+function validarFormulario(event) {
     event.preventDefault(); // no arranca por defecto el envio del formulario
 
 
@@ -23,79 +25,81 @@ function validarFormulario(event){
     var expresionesLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
     var formularioOK = true;
-                                                                //VAlidacioness
-    if (valorNombre=="") {
+    //VAlidacioness
+    if (valorNombre == "") {
         elInputNombre.value = "";
         elInputNombre.classList.add("input-error");
         elInputNombre.placeholder = "El nombre es obligatorio";
         formularioOK = false;
-    }                                                                   
-    else if(valorNombre.length < 3 || valorNombre.length > 20){      
+    }
+    else if (valorNombre.length < 3 || valorNombre.length > 20) {
         elInputNombre.value = "";
         elInputNombre.classList.add("input-error");
-        elInputNombre.placeholder = "Debe tener entre 3 y 20 caracteres"    
+        elInputNombre.placeholder = "Debe tener entre 3 y 20 caracteres"
         formularioOK = false;
     }
-    else if(expresionesLetras.test(valorNombre)==false){
+    else if (expresionesLetras.test(valorNombre) == false) {
         elInputNombre = "";
         elInputNombre.classList.add("input-error");
         elInputNombre.placeholder = "No intente abreviar juan 2do, escribalo, vago";
         formularioOK = false;
     }
 
-    if (valorApellido=="") {
+    if (valorApellido == "") {
         elInputApellido.value = "";
         elInputApellido.classList.add("input-error");
         elInputApellido.placeholder = "El Apellido es obligatorio";
         formularioOK = false;
-    }                                                           
-    else if(valorApellido.length < 3 || valorApellido.length > 20){
+    }
+    else if (valorApellido.length < 3 || valorApellido.length > 20) {
         elInputApellido.value = "";
         elInputApellido.classList.add("input-error");
-        elInputApellido.placeholder = "Debe tener entre 3 y 20 caracteres"    
+        elInputApellido.placeholder = "Debe tener entre 3 y 20 caracteres"
         formularioOK = false;
     }
-    else if(expresionesLetras.test(valorApellido)==false){
+    else if (expresionesLetras.test(valorApellido) == false) {
         elInputApellido = "";
         elInputApellido.classList.add("input-error");
         elInputApellido.placeholder = "Letras por favor no me haga renegar.";
         formularioOK = false;
     }
 
-    if(valorEmail==""){
+    if (valorEmail == "") {
         elInputEmail.value = "";
         elInputEmail.classList.add("input-error");
         elInputEmail.placeholder = "El correo es obligatorio"
         formularioOK = false;
     }
-    else if(expresionesEmail.test(valorEmail)==false){
+    else if (expresionesEmail.test(valorEmail) == false) {
         elInputEmail.value = "";
         elInputEmail.classList.add("input-error");
-        elInputEmail.placeholder= "Escriba bien el email, concentrese por favor, no se distraiga";
+        elInputEmail.placeholder = "Escriba bien el email, concentrese por favor, no se distraiga";
         formularioOK = false;
     }
 
-    if(valorTelefono==""){
+    if (valorTelefono == "") {
         elInputTelefono.value = "";
         elInputTelefono.classList.add("input-error");
         elInputTelefono.placeholder = "Te falta escribir tu telefono crack"
         formularioOK = false;
     }
-    else if(expresionesTelefono.test(valorTelefono)==false){
+    else if (expresionesTelefono.test(valorTelefono) == false) {
         elInputTelefono.value = "";
         elInputTelefono.classList.add("input-error");
         elInputTelefono.placeholder = "Escriba bien su telefono por favor, no nos haga renegar, sea buen usuario si?"
         formularioOK = false;
     }
 
-    var resumenDelFormulario = document.getElementById("resumenDelFormulario")
+    var resumenDelFormulario = document.getElementById("resumenDelFormulario");
+    resumenDelFormulario.innerHTML = "";
 
-    if (formularioOK== true) {                            //crea el resumen
-        var divDatos = document.createElement("div");               
+    if (formularioOK == true) {                            //crea el resumen
+
+        var divDatos = document.createElement("div");
         divDatos.classList.add("datos-resumen");                        //crea clase para el estilo
 
         var titulo = document.createElement("h3");
-        titulo.textContent = "Resumen de los datos del cliente enviados :)"
+        titulo.textContent = "Resumen de los datos del cliente enviados."
 
         var parrafoNombre = document.createElement("p");
         parrafoNombre.textContent = "Nombre : " + valorNombre + ", Apellido : " + valorApellido;
@@ -108,13 +112,13 @@ function validarFormulario(event){
 
         var parraComentario = document.createElement("p");
         parraComentario.textContent = "Comentario : " + valorComentario;
-    
+
         divDatos.appendChild(titulo);
         divDatos.appendChild(parrafoNombre);
         divDatos.appendChild(parrafoCorreo);
         divDatos.appendChild(parrafoTelefono);
         divDatos.appendChild(parraComentario);
-        
+
         resumenDelFormulario.appendChild(divDatos);
 
     }

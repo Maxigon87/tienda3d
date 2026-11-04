@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
+    <script type="text/javascript" src="js/galeriajs.js" defer></script>
     <title>Hola Roshi 3D</title>
 </head>
 <body>
@@ -30,13 +31,37 @@
             </div>
         </header>
 
-        <main class="inicio-contenedor">
-            <video class="inicio-video" autoplay loop muted playsinline>
-                <source src="assets/video/video-roshi.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-            </video>
-            <div class="inicio-texto">
-                <h3>Somos un emprendimiento dedicado al desarrollo, modelado y diseño de impresiones 3D personalizadas, transformando cada una de tus ideas en piezas reales de alta precisión.</h3>
+        <main class="principal-inicio">
+            <!-- Fila de dos columnas al 100%: izquierda (video + parrafo), derecha (carrusel) -->
+            <div class="inicio-dos-columnas">
+                <div class="inicio-columna-izquierda">
+                    <video class="inicio-video" autoplay loop muted playsinline>
+                        <source src="assets/video/video-roshi.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+
+                    <div class="inicio-texto">
+                        <h2>Bienvenidos a Hola Roshi 3D</h2>
+                        <h3>Innovación, diseño y precisión en cada capa</h3>
+                        <p>
+                            Somos un emprendimiento fundado por <strong>Jorge Petricca</strong> y <strong>Maximiliano Gonzalez</strong>, 
+                            nacido de la pasión por la tecnología, el modelado digital y la cultura pop. Nos especializamos en materializar ideas 
+                            a través de la impresión 3D de alta precisión, combinando creatividad técnica y acabados artesanales.
+                        </p>
+                        <p>
+                            Desde figuras de colección exclusivas y accesorios para gaming, hasta piezas personalizadas a pedido: 
+                            cada modelo es diseñado, optimizado y producido cuidando al máximo la resistencia, el detalle y la fidelidad del diseño original.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contenedor-carrusel">
+                    <img id="imgCarrusel" src="" alt="Producto3D">
+                    <div class="contenedor-botones">
+                        <button id="anterior">Anterior</button>
+                        <button id="siguiente">Siguiente</button>
+                    </div> 
+                </div>
             </div>
         </main>
 
