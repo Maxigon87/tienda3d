@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <script type="text/javascript" src="js/logicajs"></script>
+    <script type="text/javascript" src="js/logicajs.js"></script>
     <title>Contacto - Roshi 3D</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="formulario">
-            <form name="campos" id="campos" class="formulario-cuerpo">
+            <form name="campos" id="campos" class="formulario-cuerpo" onsubmit="validarFormulario(event)">
                 <label for="nombre" class="campo-etiqueta">Nombre: </label>
                 <input type="text" name="name" class="campo-entrada" placeholder="Ingrese su nombre aqui" id="nombre" required>
 
@@ -58,6 +58,10 @@
                 <p class="mensaje-formulario">Gracias por escribirnos, nos comunicaremos a la brevedad.</p>
             </form>
         </div>
+
+        <div id="resumenDelFormulario">
+        </div>
+
         <footer>
             <div class="pie-contenido">
                 <div>© 2026 Roshi3D inc. Todos los derechos reservados.</div>
