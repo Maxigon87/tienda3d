@@ -1,7 +1,7 @@
 function reseteando() {
     document.getElementById("campos").reset();
-    var resumen = document.getElementById("resumenDelFormulario");
-    if (resumen) resumen.innerHTML = "";
+   //var resumen = document.getElementById("resumenDelFormulario");
+   //if (resumen) resumen.innerHTML = "";
 }
 
 function validarFormulario(event) {
@@ -39,9 +39,9 @@ function validarFormulario(event) {
         formularioOK = false;
     }
     else if (expresionesLetras.test(valorNombre) == false) {
-        elInputNombre = "";
+        elInputNombre.value = "";
         elInputNombre.classList.add("input-error");
-        elInputNombre.placeholder = "No intente abreviar juan 2do, escribalo, vago";
+        elInputNombre.placeholder = "Solo letras por favor";
         formularioOK = false;
     }
 
@@ -58,7 +58,7 @@ function validarFormulario(event) {
         formularioOK = false;
     }
     else if (expresionesLetras.test(valorApellido) == false) {
-        elInputApellido = "";
+        elInputApellido.value = "";
         elInputApellido.classList.add("input-error");
         elInputApellido.placeholder = "Letras por favor no me haga renegar.";
         formularioOK = false;
@@ -90,8 +90,8 @@ function validarFormulario(event) {
         formularioOK = false;
     }
 
-    var resumenDelFormulario = document.getElementById("resumenDelFormulario");
-    resumenDelFormulario.innerHTML = "";
+    //var resumenDelFormulario = document.getElementById("resumenDelFormulario");
+    //resumenDelFormulario.innerHTML = "";
 
     if (formularioOK == true) {                            //crea el resumen
 
@@ -120,7 +120,9 @@ function validarFormulario(event) {
         divDatos.appendChild(parraComentario);
 
         resumenDelFormulario.appendChild(divDatos);
+        document.getElementById("campos").reset();
 
     }
+
 
 }
