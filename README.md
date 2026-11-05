@@ -11,7 +11,7 @@ Trabajo Final Integrador (TFI) desarrollado para la materia. El sitio presenta u
 ---
 
 ## Enlace al sitio publicado
-* **GitHub Pages:** FALTA
+* **GitHub Pages:** https://maxigon87.github.io/tienda3d/
 
 ---
 
